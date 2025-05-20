@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 JOBS = {
-  job_openings = {
+  
        {  "id":1,
           "title": "Software Engineer",
           "salary": "₹12,00,000 ",
@@ -49,10 +49,10 @@ JOBS = {
           "location": "Remote"
       },
        
-  }
-
-
 }
+
+
+
 @app.route('/')
 def hello_world():
   return render_template("home.html",jobs = JOBS,company_name ="Jovian")
