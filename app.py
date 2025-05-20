@@ -1,15 +1,16 @@
-from flask import Flask ,render_template
+from flask import Flask, jsonify ,render_template,jsonify
 
 app = Flask(__name__)
 
 
-JOBS = {
+JOBS = [
   
-       {  "id":1,
-          "title": "Software Engineer",
-          "salary": "₹12,00,000 ",
-          "location": "Bangalore, India"
-      },
+{
+"id":1,
+"title": "Software Engineer",
+"salary": "₹12,00,000 ",
+"location": "Bangalore, India"
+},
        {   "id":2,
           "title": "Data Analyst",
           "salary": "₹8,50,000 ",
@@ -17,7 +18,7 @@ JOBS = {
       },
       {    "id":3,
           "title": "Product Manager",
-          "salary": "$120,000 ",
+
           "location": "San Francisco, USA"
       },
        {   
@@ -39,23 +40,28 @@ JOBS = {
       },
       {    "id" :7,
           "title": "Cybersecurity Analyst",
-          "salary": "SGD 85,000 ",
+          
           "location": "Singapore"
       },
-       {   
-          "id":8
+    {   
+          "id":8,
           "title": "Frontend Developer",
           "salary": "$80,000 ",
           "location": "Remote"
-      },
+      }
        
-}
+]
 
 
 
 @app.route('/')
 def hello_world():
   return render_template("home.html",jobs = JOBS,company_name ="Jovian")
+
+@app.route("/api/jobs")
+def list_jobs():
+    return jsonify(JOBS)
+    
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port= True)
