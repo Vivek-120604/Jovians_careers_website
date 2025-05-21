@@ -17,11 +17,20 @@
     <h1 class="text-center mt-2 mt-4"> Jovian Careers </h1>
     <img  class="img-fluid" src ="static/jovian-log.png" , height = 250,width = 250 >
     <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+      <div class = "row" style = "margin-bottom:16px">
+        
+        <div class = "col-md-6">
     <p class = "lead">
       Jovian is a company dedicated to helping people build careers in tech through education, mentorship, and community.
       We offer a wide range of courses and programs to help you learn the skills you need to succeed in the tech industry.
       Whether you're a beginner or an experienced professional, we have something to offer you.
     </p>
+        </div>
+          <div class = "d-none d-md-block col-md-6">
+            <img src = "static/people_work.png" style = "height:350px;widht:auto;border-radius:4px;" >
+          </div>
+        </div>
+      <div>
      <h2 class="text-center mt-2 mb -4">Open Positions</h2>
       <div class ="border-bottom " style ="margin-bottom:16px;padding-bottom:4px;">
      {% for job in jobs %}
@@ -30,10 +39,10 @@
         
     {% endfor %}
 
-        <div class = "container text-centre">
-         <button class = "btn btn-primary btn-lg bottom-border mt-4 mb-4">Contact Us</button>
+        
+         <a href = "mailto:singhvivek12576@gmail.com?subject=Questions%20regarding%20the%20job%20application" type="button" class="btn btn-primary bottom border mt-4 mb-4">Contact us </a>
          
-        </div>
+       
     
       </div>
       {% include "footer.html"%}
